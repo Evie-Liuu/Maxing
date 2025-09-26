@@ -1,23 +1,24 @@
 <template>
   <main
-    class="
-      relative h-screen w-screeen flex flex-col justify-center items-center lg:gap-8 lg:pb-95 lg:ps-40 bg-[url('@/assets/images/Mobile/Mobile_MainPage_Background.png')] bg-cover bg-center overflow-hidden lg:bg-[url('@/assets/images/MaXing_MainPage_Pic.webp'),_url('@/assets/images/MaXing_Background.webp')] lg:[background-repeat:no-repeat,no-repeat] lg:[background-position:center,center] lg:[background-size:cover,cover]
-      transition-all duration-2000 ease-out
-    "
+    class="relative h-screen w-screeen flex flex-col justify-center items-center lg:gap-8 lg:pb-95 lg:ps-40 bg-[url('@/assets/images/Mobile/Mobile_MainPage_Background.png')] bg-cover bg-center overflow-hidden lg:bg-[url('@/assets/images/MaXing_MainPage_Pic.webp'),_url('@/assets/images/MaXing_Background.webp')] lg:[background-repeat:no-repeat,no-repeat] lg:[background-position:center,center] lg:[background-size:cover,cover] transition-all duration-2000 ease-out"
   >
     <!-- School Logo -->
-    <!-- <div class="absolute w-full h-full top-0 left-0">
-      <img
-        src="@/assets/images/Web_ChangAn_Logo.png"
-        class="hidden lg:block absolute w-full h-full top-0 left-0 object-cover object-center pointer-events-none select-none"
-        alt="Changan_logo"
-      />
-      <img
-        src="@/assets/images/Mobile/Mobile_ChangAn_Logo.png"
-        class="block lg:hidden absolute w-full h-full top-0 left-0 object-cover object-center pointer-events-none select-none"
-        alt="Changan_logo"
-      />
-    </div> -->
+    <section>
+      <div class="hidden lg:block absolute w-full h-full top-0 left-0">
+        <img
+          :src="Speak_Chinese1"
+          class="absolute w-full h-full top-0 left-0 object-cover object-center pointer-events-none select-none"
+          alt="Changan_logo"
+        />
+      </div>
+      <div class="block lg:hidden absolute w-full h-full top-0 left-0">
+        <img
+          :src="Speak_Chinese1"
+          class="absolute w-full h-full top-0 left-0 object-cover object-center pointer-events-none select-none"
+          alt="Changan_logo"
+        />
+      </div>
+    </section>
 
     <!-- Cover -->
     <!-- <section class="flex-shrink-0 z-50">
@@ -52,9 +53,7 @@
       </div>
     </section>
     <!-- Menu Buttons -->
-    <section
-      class="flex items-center justify-center font-bold"
-    >
+    <section class="flex items-center justify-center font-bold">
       <div
         :class="[
           'transition-all duration-3000 ease-out',
@@ -117,6 +116,14 @@
 import { ref, onMounted } from "vue";
 import buttonUnselected from "@/assets/images/Bar_Unselected.png";
 import buttonSelected from "@/assets/images/Bar_Selected.png";
+import Speak_Chinese1 from "@/assets/images/Speak_Chinese1.png";
+import Speak_Chinese2 from "@/assets/images/Speak_Chinese2.png";
+import Speak_Chinese3 from "@/assets/images/Speak_Chinese3.png";
+import Speak_Chinese4 from "@/assets/images/Speak_Chinese4.png";
+import Speak_English1 from "@/assets/images/Speak_English1.png";
+import Speak_English2 from "@/assets/images/Speak_English2.png";
+import Speak_English3 from "@/assets/images/Speak_English3.png";
+import Speak_English4 from "@/assets/images/Speak_English4.png";
 
 const hoveredIndex = ref(null);
 const isLoaded = ref(false);
