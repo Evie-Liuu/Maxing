@@ -1,7 +1,7 @@
 <template>
   <main
     class="
-      relative h-screen w-screeen flex flex-col justify-center items-center lg:gap-8 bg-[url('@/assets/images/Mobile/Mobile_MainPage_Background.png')] bg-cover bg-center overflow-hidden lg:bg-[url('@/assets/images/MaXing_MainPage_Pic.webp'),_url('@/assets/images/MaXing_Background.webp')] lg:[background-repeat:no-repeat,no-repeat] lg:[background-position:center,center] lg:[background-size:cover,cover]
+      relative h-screen w-screeen flex flex-col justify-center items-center lg:gap-8 lg:pb-95 lg:ps-40 bg-[url('@/assets/images/Mobile/Mobile_MainPage_Background.png')] bg-cover bg-center overflow-hidden lg:bg-[url('@/assets/images/MaXing_MainPage_Pic.webp'),_url('@/assets/images/MaXing_Background.webp')] lg:[background-repeat:no-repeat,no-repeat] lg:[background-position:center,center] lg:[background-size:cover,cover]
       transition-all duration-2000 ease-out
     "
   >
@@ -42,7 +42,7 @@
           'transition-all duration-3000 ease-out',
           isLoaded ? 'opacity-100' : 'opacity-0',
         ]"
-        class="lg:max-w-180 flex items-center justify-center lg:justify-start"
+        class="lg:max-w-140 h-auto flex items-center justify-center lg:justify-start"
       >
         <img
           src="@/assets/images/Web_logo.png"
@@ -53,14 +53,14 @@
     </section>
     <!-- Menu Buttons -->
     <section
-      class="h-full flex items-center justify-center font-bold text-green-dark translate-y-0 2xl:-translate-y-4"
+      class="flex items-center justify-center font-bold"
     >
       <div
         :class="[
           'transition-all duration-3000 ease-out',
           isLoaded ? 'opacity-100' : 'opacity-0',
         ]"
-        class="flex flex-col pt-4 lg:flex-row lg:gap-20 items-center justify-center text-xl lg:text-2xl lg:p-0 lg:pb-25"
+        class="flex flex-col gap-5 pt-4 lg:flex-row lg:gap-15 items-center justify-center text-xl lg:text-3xl"
       >
         <router-link
           to="/about"
@@ -110,6 +110,7 @@
         >
       </div>
     </section>
+    <!-- <section class="h-70"></section> -->
   </main>
 </template>
 <script setup>
