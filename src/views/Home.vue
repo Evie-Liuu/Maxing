@@ -26,7 +26,7 @@
           <p class="absolute inset-0 w-full h-full">你好</p>
         </div> -->
       </div>
-      <div class="block lg:hidden absolute w-full h-full top-0 left-0">
+      <!-- <div class="block lg:hidden absolute w-full h-full top-0 left-0">
         <img
           :src="speakImages.chinese[currentIndex - 1]"
           :class="[
@@ -35,7 +35,7 @@
           ]"
           alt="Changan_logo"
         />
-      </div>
+      </div> -->
     </section>
 
     <!-- Cover -->
