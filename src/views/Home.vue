@@ -9,13 +9,22 @@
           :src="speakImages[currentLanguage][currentIndex - 1]"
           :class="[
             'absolute w-full h-full top-0 left-0 object-cover object-center pointer-events-none select-none transition-all duration-500',
-            isAnimating ? 'scale-110 opacity-80' : 'scale-100 opacity-100'
+            isAnimating ? 'scale-110 opacity-80' : 'scale-100 opacity-100',
           ]"
-          alt="Changan_logo"
+          alt="speakBubble"
         />
-        <div class="absolute inset-0 flex flex-col items-center justify-center">
-          <p>你好</p>
-          <p>Hello</p>
+        <div
+          class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full  overflow-hidden"
+        >
+          <!-- <img src="/example.jpg" class="w-full h-full object-cover" /> -->
+          <div
+            class="absolute inset-0 flex items-center justify-center -translate-x-[1vw] text-4xl w-[1920px] h-[1080px] aspect-video"
+          >
+            Hello
+          </div>
+        </div>
+        <div class="absolute inset-0 w-full h-full">
+          <p class="absolute inset-0 w-full h-full">你好</p>
         </div>
       </div>
       <div class="block lg:hidden absolute w-full h-full top-0 left-0">
@@ -23,7 +32,7 @@
           :src="speakImages.chinese[currentIndex - 1]"
           :class="[
             'absolute w-full h-full top-0 left-0 object-cover object-center pointer-events-none select-none transition-all duration-500',
-            isAnimating ? 'scale-110 opacity-80' : 'scale-100 opacity-100'
+            isAnimating ? 'scale-110 opacity-80' : 'scale-100 opacity-100',
           ]"
           alt="Changan_logo"
         />
@@ -137,24 +146,28 @@ import Speak_English4 from "@/assets/images/Speak_English4.png";
 
 const hoveredIndex = ref(null);
 const isLoaded = ref(false);
-const currentLanguage = ref('english');
+const currentLanguage = ref("english");
 const currentIndex = ref(1);
 const isAnimating = ref(false);
 let timer = null;
 
 const speakImages = {
   english: [Speak_English1, Speak_English2, Speak_English3, Speak_English4],
-  chinese: [Speak_Chinese1, Speak_Chinese2, Speak_Chinese3, Speak_Chinese4]
+  chinese: [Speak_Chinese1, Speak_Chinese2, Speak_Chinese3, Speak_Chinese4],
+};
+const speakText = {
+  english: ["Hello", "Grass", "Sky", "Cloud"],
+  chinese: ["你好", "草", "天空", "雲朵"],
 };
 
 const switchImage = () => {
   isAnimating.value = true;
   setTimeout(() => {
-    if (currentLanguage.value === 'chinese') {
-      currentLanguage.value = 'english';
+    if (currentLanguage.value === "chinese") {
+      currentLanguage.value = "english";
       currentIndex.value = (currentIndex.value % 4) + 1;
     } else {
-      currentLanguage.value = 'chinese';
+      currentLanguage.value = "chinese";
     }
     setTimeout(() => {
       isAnimating.value = false;
@@ -166,7 +179,7 @@ onMounted(() => {
   setTimeout(() => {
     isLoaded.value = true;
   }, 100);
-  timer = setInterval(switchImage, 3000);
+  // timer = setInterval(switchImage, 3000);
 });
 
 onUnmounted(() => {
