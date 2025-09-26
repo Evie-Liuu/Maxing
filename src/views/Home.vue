@@ -1,6 +1,6 @@
 <template>
   <main
-    class="relative h-screen w-screeen flex flex-col justify-center items-center lg:gap-8 lg:pb-95 lg:ps-40 bg-[url('@/assets/images/Mobile/Mobile_MainPage_Background.png')] bg-cover bg-center overflow-hidden lg:bg-[url('@/assets/images/MaXing_MainPage_Pic.webp'),_url('@/assets/images/MaXing_Background.webp')] lg:[background-repeat:no-repeat,no-repeat] lg:[background-position:center,center] lg:[background-size:cover,cover] transition-all duration-2000 ease-out"
+    class="relative h-screen w-screeen flex flex-col justify-center items-center gap-10 pb-40 ps-10 lg:gap-8 lg:pb-100 lg:ps-50 bg-[url('@/assets/images/Mobile/Mobile_MainPage_Background.png')] bg-cover bg-center overflow-hidden lg:bg-[url('@/assets/images/MaXing_Background_MainPage_Pic.webp')] transition-all duration-2000 ease-out"
   >
     <!-- School Logo -->
     <section>
@@ -13,10 +13,9 @@
           ]"
           alt="speakBubble"
         />
-        <div
+        <!-- <div
           class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full  overflow-hidden"
         >
-          <!-- <img src="/example.jpg" class="w-full h-full object-cover" /> -->
           <div
             class="absolute inset-0 flex items-center justify-center -translate-x-[1vw] text-4xl w-[1920px] h-[1080px] aspect-video"
           >
@@ -25,7 +24,7 @@
         </div>
         <div class="absolute inset-0 w-full h-full">
           <p class="absolute inset-0 w-full h-full">你好</p>
-        </div>
+        </div> -->
       </div>
       <div class="block lg:hidden absolute w-full h-full top-0 left-0">
         <img
@@ -56,13 +55,13 @@
       </div>
     </section> -->
     <!-- School Title -->
-    <section class="">
+    <section class="z-50">
       <div
         :class="[
           'transition-all duration-3000 ease-out',
           isLoaded ? 'opacity-100' : 'opacity-0',
         ]"
-        class="lg:max-w-140 h-auto flex items-center justify-center lg:justify-start"
+        class="max-w-80 2xl:max-w-130 lg:max-w-150 h-auto flex items-center justify-center lg:justify-start"
       >
         <img
           src="@/assets/images/Web_logo.png"
@@ -72,13 +71,13 @@
       </div>
     </section>
     <!-- Menu Buttons -->
-    <section class="flex items-center justify-center font-bold">
+    <section class="flex items-center justify-center font-bold z-50">
       <div
         :class="[
           'transition-all duration-3000 ease-out',
           isLoaded ? 'opacity-100' : 'opacity-0',
         ]"
-        class="flex flex-col gap-5 pt-4 lg:flex-row lg:gap-15 items-center justify-center text-xl lg:text-3xl"
+        class="flex flex-col gap-3 pt-5 ps-18 lg:flex-row lg:gap-0 lg:p-0 items-center justify-center text-2xl lg:text-4xl"
       >
         <router-link
           to="/about"
@@ -88,41 +87,41 @@
         >
           <img
             :src="hoveredIndex === 0 ? buttonSelected : buttonUnselected"
-            class="pointer-events-none select-none w-48 lg:w-60"
+            class="pointer-events-none select-none w-35 lg:w-60"
             alt="Button_1"
           />
           <span
-            class="absolute inset-0 flex items-center justify-center tracking-widest"
+            class="absolute inset-0 flex items-center justify-center lg:tracking-widest"
             >校園探索</span
           >
         </router-link>
         <router-link
           to="/actions"
-          class="relative -translate-y-5 lg:translate-y-0"
+          class="relative -translate-y-0 lg:translate-y-25"
           @mouseover="hoveredIndex = 1"
           @mouseleave="hoveredIndex = null"
           ><img
             :src="hoveredIndex === 1 ? buttonSelected : buttonUnselected"
-            class="pointer-events-none select-none w-48 lg:w-60"
+            class="pointer-events-none select-none w-35 lg:w-60"
             alt="Button_2"
           />
           <span
-            class="absolute inset-0 flex items-center justify-center tracking-widest"
+            class="absolute inset-0 flex items-center justify-center lg:tracking-widest"
             >SDGs行動</span
           ></router-link
         >
         <router-link
           to="/sdgs"
-          class="relative -translate-y-10 lg:translate-y-0"
+          class="relative translate-x-0 lg:-translate-x-18"
           @mouseover="hoveredIndex = 2"
           @mouseleave="hoveredIndex = null"
           ><img
             :src="hoveredIndex === 2 ? buttonSelected : buttonUnselected"
-            class="pointer-events-none select-none w-48 lg:w-60"
+            class="pointer-events-none select-none w-35 lg:w-60"
             alt="Button_3"
           />
           <span
-            class="absolute inset-0 flex items-center justify-center tracking-widest"
+            class="absolute inset-0 flex items-center justify-center lg:tracking-widest"
             >SDGs成果</span
           ></router-link
         >
