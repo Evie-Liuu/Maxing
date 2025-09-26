@@ -1,11 +1,15 @@
 
 <template>
   <div v-if="isLoading" class="loading-overlay">
-    <img src="@/assets/images/English_Loading.gif" class="loader" alt="Loading..." />
+    <img
+      src="@/assets/images/English_Loading.gif"
+      class="loader"
+      alt="Loading..."
+    />
     <p>載入中...</p>
   </div>
   <nav
-    class="fixed top-0 left-0 z-50 w-full p-2 text-rice-500 md:text-4xl flex flex-row justify-between items-center transition-transform duration-300 ease-in-out"
+    class="fixed top-0 left-0 z-50 w-full p-2 md:text-4xl flex flex-row justify-between items-center transition-transform duration-300 ease-in-out"
     :class="[
       $route.path !== '/' ? 'bg-header' : '',
       isHeaderVisible || isMenuOpen ? 'translate-y-0' : '-translate-y-full',
@@ -65,22 +69,22 @@
         class="px-8 text-rice-500 text-shadow-3d"
         @click="isMenuOpen = false"
         :class="{
-          'pointer-events-none rounded-full bg-orange-300 border-2 border-white ':
+          'pointer-events-none rounded-full bg-orange-300 border-6 border-brown-500 ':
             $route.path === '/',
         }"
       >
-        <div class="p-3">首頁</div>
+        <div class="p-3 md:p-2">首頁</div>
       </router-link>
       <router-link
         to="/about"
         class="px-3 text-rice-500 text-shadow-3d"
         @click="isMenuOpen = false"
         :class="{
-          'pointer-events-none rounded-full bg-orange-300 border-2 border-white':
+          'pointer-events-none rounded-full bg-orange-300 border-6 border-brown-500':
             $route.path === '/about',
         }"
       >
-        <div class="p-3 md:p-3">
+        <div class="p-3 md:p-2">
           <span>校園探索</span>
         </div>
       </router-link>
@@ -89,11 +93,11 @@
         class="px-3 text-rice-500 text-shadow-3d"
         @click="isMenuOpen = false"
         :class="{
-          'pointer-events-none rounded-full bg-orange-300 border-2 border-white':
+          'pointer-events-none rounded-full bg-orange-300 border-6 border-brown-500':
             $route.path === '/actions',
         }"
       >
-        <div class="p-3 md:p-3">
+        <div class="p-3 md:p-2">
           <span>SDGs行動</span>
         </div>
       </router-link>
@@ -102,11 +106,11 @@
         class="px-3 text-rice-500 text-shadow-3d"
         @click="isMenuOpen = false"
         :class="{
-          'pointer-events-none rounded-full bg-orange-300 border-2 border-white':
+          'pointer-events-none rounded-full bg-orange-300 border-6 border-brown-500':
             $route.path === '/sdgs' || $route.path.includes('/story'),
         }"
       >
-        <div class="p-3">
+        <div class="p-3 md:p-2">
           <span>SDGs成果</span>
         </div>
       </router-link>
