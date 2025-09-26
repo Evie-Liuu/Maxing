@@ -6,13 +6,11 @@
     <section>
       <div class="hidden lg:block absolute w-full h-full top-0 left-0">
         <img
-          :src="Speak_Chinese1"
-          class="absolute w-full h-full top-0 left-0 object-cover object-center pointer-events-none select-none"
-          alt="Changan_logo"
-        />
-        <img
-          :src="Speak_English1"
-          class="absolute w-full h-full top-0 left-0 object-cover object-center pointer-events-none select-none"
+          :src="speakImages[currentLanguage][currentIndex - 1]"
+          :class="[
+            'absolute w-full h-full top-0 left-0 object-cover object-center pointer-events-none select-none transition-all duration-500',
+            isAnimating ? 'scale-110 opacity-80' : 'scale-100 opacity-100'
+          ]"
           alt="Changan_logo"
         />
         <div class="absolute inset-0 flex flex-col items-center justify-center">
@@ -22,8 +20,11 @@
       </div>
       <div class="block lg:hidden absolute w-full h-full top-0 left-0">
         <img
-          :src="Speak_Chinese1"
-          class="absolute w-full h-full top-0 left-0 object-cover object-center pointer-events-none select-none"
+          :src="speakImages.chinese[currentIndex - 1]"
+          :class="[
+            'absolute w-full h-full top-0 left-0 object-cover object-center pointer-events-none select-none transition-all duration-500',
+            isAnimating ? 'scale-110 opacity-80' : 'scale-100 opacity-100'
+          ]"
           alt="Changan_logo"
         />
       </div>
@@ -122,7 +123,7 @@
   </main>
 </template>
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, onUnmounted } from "vue";
 import buttonUnselected from "@/assets/images/Bar_Unselected.png";
 import buttonSelected from "@/assets/images/Bar_Selected.png";
 import Speak_Chinese1 from "@/assets/images/Speak_Chinese1.png";
@@ -136,11 +137,42 @@ import Speak_English4 from "@/assets/images/Speak_English4.png";
 
 const hoveredIndex = ref(null);
 const isLoaded = ref(false);
+const currentLanguage = ref('english');
+const currentIndex = ref(1);
+const isAnimating = ref(false);
+let timer = null;
+
+const speakImages = {
+  english: [Speak_English1, Speak_English2, Speak_English3, Speak_English4],
+  chinese: [Speak_Chinese1, Speak_Chinese2, Speak_Chinese3, Speak_Chinese4]
+};
+
+const switchImage = () => {
+  isAnimating.value = true;
+  setTimeout(() => {
+    if (currentLanguage.value === 'chinese') {
+      currentLanguage.value = 'english';
+      currentIndex.value = (currentIndex.value % 4) + 1;
+    } else {
+      currentLanguage.value = 'chinese';
+    }
+    setTimeout(() => {
+      isAnimating.value = false;
+    }, 500);
+  }, 500);
+};
 
 onMounted(() => {
   setTimeout(() => {
     isLoaded.value = true;
   }, 100);
+  timer = setInterval(switchImage, 3000);
+});
+
+onUnmounted(() => {
+  if (timer) {
+    clearInterval(timer);
+  }
 });
 </script>
 <style scoped>
