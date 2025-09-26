@@ -10,6 +10,11 @@
           class="absolute w-full h-full top-0 left-0 object-cover object-center pointer-events-none select-none"
           alt="Changan_logo"
         />
+        <img
+          :src="Speak_English1"
+          class="absolute w-full h-full top-0 left-0 object-cover object-center pointer-events-none select-none"
+          alt="Changan_logo"
+        />
       </div>
       <div class="block lg:hidden absolute w-full h-full top-0 left-0">
         <img
