@@ -3,17 +3,17 @@
     class="relative h-screen w-screeen flex flex-col justify-center items-center gap-10 pb-40 ps-10 lg:gap-8 lg:pb-100 lg:ps-50 bg-[url('@/assets/images/Mobile/Mobile_MainPage_Background.png')] bg-cover bg-center overflow-hidden lg:bg-[url('@/assets/images/MaXing_Background_MainPage_Pic.webp')] transition-all duration-2000 ease-out"
   >
     <!-- Speak Bubble -->
-    <div class="absolute w-full h-full top-0 left-0">
+    <div class="absolute w-full h-full top-0 left-0 z-50">
       <img
         src="@/assets/images/SpeakBubble.gif"
         class="hidden lg:block absolute w-full h-full top-0 left-0 object-cover object-center pointer-events-none select-none"
         alt="SpeakBubble"
       />
-      <!-- <img
-        src="@/assets/images/Mobile/Mobile_ChangAn_Logo.png"
+      <img
+        src="@/assets/images/Mobile/Mobile_SpeakBubble.gif"
         class="block lg:hidden absolute w-full h-full top-0 left-0 object-cover object-center pointer-events-none select-none"
-        alt="Changan_logo"
-      /> -->
+        alt="SpeakBubble_mobile"
+      />
     </div>
 
     <!-- School Title -->
